@@ -245,12 +245,12 @@ int CHud :: DrawHudStringReverse( int xpos, int ypos, int iMinX, char *szString,
 {
 	unsigned char *szIt;
 	// find the end of the string
-	for ( szIt = szString; *szIt != 0; szIt++ )
+	for ( szIt = (unsigned char *)szString; *szIt != 0; szIt++ )
 	{ // we should count the length?		
 	}
 
 	// iterate throug the string in reverse
-	for ( szIt--;  szIt != (szString-1);  szIt-- )	
+	for ( szIt--;  szIt != (unsigned char *)(szString-1);  szIt-- )	
 	{
 		int next = xpos - gHUD.m_scrinfo.charWidths[ *szIt ]; // variable-width fonts look cool
 		if ( next < iMinX )
